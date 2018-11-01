@@ -1,0 +1,94 @@
+{
+	"info": {
+		"_postman_id": "7295880e-84b2-42f9-8f7b-3b030a092890",
+		"name": "better-tunes",
+		"description": "Testing API endpoint from iTunes API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET /search?term=michael+jackson",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "https://itunes.apple.com/search?term=michael+jackson",
+					"protocol": "https",
+					"host": [
+						"itunes",
+						"apple",
+						"com"
+					],
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "term",
+							"value": "michael+jackson"
+						}
+					]
+				},
+				"description": "Testing with song name term"
+			},
+			"response": []
+		},
+		{
+			"name": "GET /search?term=thriller",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "https://itunes.apple.com/search?term=thriller",
+					"protocol": "https",
+					"host": [
+						"itunes",
+						"apple",
+						"com"
+					],
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "term",
+							"value": "thriller"
+						}
+					]
+				},
+				"description": "Testing with song name term"
+			},
+			"response": []
+		},
+		{
+			"name": "GET /search?term=the+wall",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "https://itunes.apple.com/search?term=the+wall",
+					"protocol": "https",
+					"host": [
+						"itunes",
+						"apple",
+						"com"
+					],
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "term",
+							"value": "the+wall"
+						}
+					]
+				},
+				"description": "Testing with album name term"
+			},
+			"response": []
+		}
+	]
+}

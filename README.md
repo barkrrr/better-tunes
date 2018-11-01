@@ -1,27 +1,51 @@
 # BetterTunes
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.0-rc.1.
+## Description
 
-## Development server
+This is a SPA where users can find and listen to music based on different search terms.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Testing 
+-  As a first step the iTunes API was tested in Postman, and raw data from the API response was analyzed to better understand the content of the API.
+- [Response Example](./response-example.json)
+- [Postman Collection](./better-tunes.postman_collection.json)
 
-## Code scaffolding
+## User Stories
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+-  **404:** As a user of the app I want to see a 404 page if I try to reach a page that does not exist so that I know it's my fault.
+- **Homepage:** As a user I want to be able to search for my favorite album or artist, and sort my search terms.
+-  **Player page** As a user I want to listen to different songs on an album, pause and skip a song, and retrieve more information about the album and artist.
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Backlog
 
-## Running unit tests
+-  **:** .
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+## Routes
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+- / -Homepage 
+- /player - music player with album and artist details 
+- ** notfound - notfound page 
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Pages
+
+- Homepage
+- Player page
+- 404 Page
+
+## Components
+
+- Album card component
+- Player/album card component
+
+## Services
+
+- searchService
+  
+
+### Git
+
+Url to the better-tunes repository 
+
+[Repository Link](https://github.com/barkrrr/better-tunes)

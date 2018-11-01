@@ -1,0 +1,37 @@
+{
+  "resultCount":50,
+  "results": [
+  {
+    "wrapperType":"track",
+    "kind":"song", 
+    "artistId":"487143", 
+    "collectionId":1065975633, 
+    "trackId":"1065975638", 
+    "artistName":"Pink Floyd", 
+    "collectionName":"The Wall", 
+    "trackName":"Another Brick In the Wall, Pt. 2", 
+    "collectionCensoredName":"The Wall", 
+    "trackCensoredName":"Another Brick In the Wall, Pt. 2", 
+    "artistViewUrl":"https://itunes.apple.com/us/artist/pink-floyd/487143?uo=4", 
+    "collectionViewUrl":"https://itunes.apple.com/us/album/another-brick-in-the-wall-pt-2/1065975633?i=1065975638&uo=4", 
+    "trackViewUrl":"https://itunes.apple.com/us/album/another-brick-in-the-wall-pt-2/1065975633?i=1065975638&uo=4",
+    "previewUrl":"https://audio-ssl.itunes.apple.com/apple-assets-us-std-000001/Music7/v4/c3/11/ae/c311aef0-be7b-35de-193a-b55629d2cb14/mzaf_538320974834743269.plus.aac.p.m4a",
+    "artworkUrl30":"https://is4-ssl.mzstatic.com/image/thumb/Music7/v4/e5/9f/fb/e59ffb3b-1283-ee80-56a5-1b983df53ab2/source/30x30bb.jpg", 
+    "artworkUrl60":"https://is4-ssl.mzstatic.com/image/thumb/Music7/v4/e5/9f/fb/e59ffb3b-1283-ee80-56a5-1b983df53ab2/source/60x60bb.jpg", 
+    "artworkUrl100":"https://is4-ssl.mzstatic.com/image/thumb/Music7/v4/e5/9f/fb/e59ffb3b-1283-ee80-56a5-1b983df53ab2/source/100x100bb.jpg", 
+    "collectionPrice":16.99, 
+    "trackPrice":1.29, 
+    "releaseDate":"1979-11-23T08:00:00Z", 
+    "collectionExplicitness":"notExplicit", 
+    "trackExplicitness":"notExplicit", 
+    "discCount":2, 
+    "discNumber":1, 
+    "trackCount":13, 
+    "trackNumber":5, 
+    "trackTimeMillis":238747, 
+    "country":"USA", 
+    "currency":"USD",
+    "primaryGenreName":"Rock", 
+    "isStreamable":true
+  }
+]}
