@@ -5,7 +5,7 @@
   <div class="field" [ngClass]="{'has-error': feedbackEnabled && searchQueryField.errors}">
     <input type="text" name="searchQuery" [(ngModel)]="searchQuery" #searchQueryField="ngModel" required [disabled]="processing"/>
     <div *ngIf="feedbackEnabled && searchQueryField.errors">
-      <p *ngIf="searchQueryField.errors.required" class="validation">query is required</p>
+      <p *ngIf="searchQueryField.errors.required" class="validation">Include your search terms</p>
     </div>
   </div>
 
@@ -13,5 +13,24 @@
     <button type="submit" [disabled]="processing">Submit</button>
   </div>
 </form>
+
+<table class="table" ts-wrapper>
+  <thead>
+    <tr>
+      <th ts-criteria="collectionName" ts-default>Album title</th>
+      <th ts-criteria="tracktimeMillis" ts-default>Song length</th>
+      <th ts-criteria="primaryGenreName" ts-default>Genre</th>
+      <th ts-criteria="collectionPrice" ts-default>Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="item in items track by collectionName" ts-repeat>
+      <td>{{item.collectionName}}</td>
+      <td>{{item.tracktimeMillis | date}</td>
+      <td>{{item.primaryGenreName}}</td>
+      <td>{{item.collectionPrice | currency}}</td>
+    </tr>
+  </tbody>
+</table>
 
 

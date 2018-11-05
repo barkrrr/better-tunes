@@ -41,8 +41,7 @@ This is a SPA where users can find and listen to music based on different search
 
 ## Services
 
-- searchService
-  
+- searchService  
 
 ### Git
 

@@ -7,20 +7,22 @@ import { AppComponent } from './app.component';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { PlayerPageComponent } from './pages/player-page/player-page.component';
+import { CurrencyPipe } from './pipes/currency.pipe';
+import { DatePipe } from './pipes/date.pipe';
 
 const routes: Routes = [
   { path: '',  component: HomePageComponent },
   { path: 'player', component: PlayerPageComponent }
 ];
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
     NotFoundPageComponent,
     HomePageComponent,
-    PlayerPageComponent
+    PlayerPageComponent,
+    CurrencyPipe,
+    DatePipe
   ],
   imports: [
     BrowserModule,
