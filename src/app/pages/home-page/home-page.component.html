@@ -1,9 +1,9 @@
 <form (ngSubmit)="submitForm(form)" #form="ngForm" novalidate [ngClass]="{'is-processing': processing}">
   
   <div class="field" [ngClass]="{'has-error': feedbackEnabled && searchQueryField.errors}">
-    <input type="text" name="searchQuery" [(ngModel)]="searchQuery" #searchQueryField="ngModel" required [disabled]="processing"/>
+    <input type="text" placeholder="Search your music here" name="searchQuery" [(ngModel)]="searchQuery" #searchQueryField="ngModel" required [disabled]="processing"/>
     <div *ngIf="feedbackEnabled && searchQueryField.errors">
-      <p *ngIf="searchQueryField.errors.required" class="validation">Include your search terms</p>
+      <p *ngIf="searchQueryField.errors.required" class="validation"></p>
     </div>
   </div>
 

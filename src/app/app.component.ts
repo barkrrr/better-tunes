@@ -8,6 +8,7 @@ import { SearchService } from 'src/app/services/search.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  title = 'better-tunes';
   loading: boolean = false;
   
   constructor(

@@ -8,7 +8,6 @@ import { SearchService } from 'src/app/services/search.service';
 })
 
 export class HomePageComponent implements OnInit {
-  title = 'better-tunes';
   feedbackEnabled = false;
   error = null;
   processing = false;
@@ -37,7 +36,26 @@ export class HomePageComponent implements OnInit {
         this.processing = false;
         this.feedbackEnabled = false;
       });
+      }
+    }
+  
+
+  sortBy(time, genre, price) {
+    let array = this.results.results;
+    if (this.results.results === 'time') {
+      array.sort((a, b) => {
+        return a.trackTimeMillis - b.trackTimeMillis;
+      });
+    if (this.results.results === 'genre') {
+      array.sort((a, b) => {
+        return a.primaryGenreName - b.primaryGenreName;
+      });
+    if (this.results.results === 'price') {
+      array.sort((a, b) => {
+        return a.trackPrice - b.trackPrice;
+      });
     }
   }
+    }
 }
-
+}
