@@ -1,7 +1,5 @@
-<h1>The best place to search for tunes!</h1>
-
 <form (ngSubmit)="submitForm(form)" #form="ngForm" novalidate [ngClass]="{'is-processing': processing}">
-
+  
   <div class="field" [ngClass]="{'has-error': feedbackEnabled && searchQueryField.errors}">
     <input type="text" name="searchQuery" [(ngModel)]="searchQuery" #searchQueryField="ngModel" required [disabled]="processing"/>
     <div *ngIf="feedbackEnabled && searchQueryField.errors">
@@ -14,23 +12,34 @@
   </div>
 </form>
 
-<table class="table" ts-wrapper>
-  <thead>
-    <tr>
-      <th ts-criteria="collectionName" ts-default>Album title</th>
-      <th ts-criteria="tracktimeMillis" ts-default>Song length</th>
-      <th ts-criteria="primaryGenreName" ts-default>Genre</th>
-      <th ts-criteria="collectionPrice" ts-default>Price</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr ng-repeat="item in items track by collectionName" ts-repeat>
-      <td>{{item.collectionName}}</td>
-      <td>{{item.tracktimeMillis | date}</td>
-      <td>{{item.primaryGenreName}}</td>
-      <td>{{item.collectionPrice | currency}}</td>
-    </tr>
-  </tbody>
-</table>
+<div *ngIf="results">
+  <table class="table" ts-wrapper>
+    <thead>
+      <tr>
+        <th></th>
+        <th>Song name</th>
+        <th>Artist</th>
+        <th>Album name</th>
+        <th>Release date</th>
+        <th>Cover</th>
+        <th><a (click)="orderByTime()">Time</a></th>
+        <th><a (click)="orderByGenre()">Genre</a></th>
+        <th><a (click)="orderByPrice()">Price</a></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let result of results.results">
+        <td><a [routerLink]="['/player']" (click)="getId(i)">{{ result.trackName }}</a></td>
+        <td>{{ result.artistName }}</td>
+        <td>{{ result.collectionName }}</td>
+        <td>{{ result.releaseDate | date }}</td>
+        <td><img src="{{ result.artworkUrl100 }}" alt="Album cover"></td>
+        <td>{{ result.trackTimeMillis | date:'m:ss' }}</td>
+        <td>{{ result.primaryGenreName }}</td>
+        <td>{{ result.trackPrice | currency }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 

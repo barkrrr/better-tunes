@@ -8,11 +8,11 @@ import { SearchService } from 'src/app/services/search.service';
 })
 
 export class HomePageComponent implements OnInit {
-
+  title = 'better-tunes';
   feedbackEnabled = false;
   error = null;
   processing = false;
-  searchQuery: String;
+  searchQuery: string;
   results: any;
 
   constructor(
@@ -27,17 +27,17 @@ export class HomePageComponent implements OnInit {
     this.feedbackEnabled = true;
     if (form.valid) {
       this.processing = true;
-      this.searchService.getData(this.searchQuery)
-        .then((results) => {
-          this.results = results
-        })
-        .catch((err) => {
-          this.error = err.error.error; 
-          this.processing = false;
-          this.feedbackEnabled = false;
-        });
+      this.searchService.search(this.searchQuery)
+      .then(results => {
+        this.results = results
+        console.log(results)
+      })
+      .catch((err) => {
+        console.log(err)
+        this.processing = false;
+        this.feedbackEnabled = false;
+      });
     }
   }
-
 }
 

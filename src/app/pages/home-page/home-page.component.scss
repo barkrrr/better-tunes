@@ -1,13 +1,8 @@
 th.tablesort-sortable {
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -o-user-select: none;
-  user-select: none;
   cursor: pointer;
 }
 
-table .tablesort-sortable:after{
+.table .tablesort-sortable:after{
   content:"";
   float:right;
   margin-top:7px;
@@ -19,15 +14,15 @@ table .tablesort-sortable:after{
   border-bottom:4px solid #000;
 }
 
-table .tablesort-desc:after{
+.table .tablesort-desc:after{
   border-top:4px solid #000;
   border-bottom:none;
 }
 
-table .tablesort-asc,table .tablesort-desc{
+.table .tablesort-asc,table .tablesort-desc{
   background-color:rgba(141, 192, 219, 0.25);
 }
 
-table .tablesort-sortable:hover:after, table .tablesort-asc:after, table .tablesort-desc:after {
+.table .tablesort-sortable:hover:after, table .tablesort-asc:after, table .tablesort-desc:after {
   visibility:visible;
 }
