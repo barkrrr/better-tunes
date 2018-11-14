@@ -7,12 +7,16 @@ import { SearchService } from 'src/app/services/search.service';
   styleUrls: ['./player-page.component.scss']
 })
 export class PlayerPageComponent implements OnInit {
-
+  results
+  trackId
+  
   constructor(
     private searchService: SearchService
   ) { }
 
   ngOnInit() {
+    this.results = this.searchService.getStoredResult;
+    this.trackId = this.search.trackId;
   }
-
 }
+

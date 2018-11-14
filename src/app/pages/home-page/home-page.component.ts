@@ -13,6 +13,7 @@ export class HomePageComponent implements OnInit {
   processing = false;
   searchQuery: string;
   results: any;
+  term: string;
 
   constructor(
     private searchService: SearchService
@@ -29,7 +30,6 @@ export class HomePageComponent implements OnInit {
       this.searchService.search(this.searchQuery)
       .then(results => {
         this.results = results
-        console.log(results)
       })
       .catch((err) => {
         console.log(err)
@@ -38,24 +38,43 @@ export class HomePageComponent implements OnInit {
       });
       }
     }
-  
 
-  sortBy(time, genre, price) {
-    let array = this.results.results;
-    if (this.results.results === 'time') {
-      array.sort((a, b) => {
-        return a.trackTimeMillis - b.trackTimeMillis;
-      });
-    if (this.results.results === 'genre') {
-      array.sort((a, b) => {
-        return a.primaryGenreName - b.primaryGenreName;
-      });
-    if (this.results.results === 'price') {
-      array.sort((a, b) => {
-        return a.trackPrice - b.trackPrice;
-      });
+  sortBy(term) {  
+    if (term === 'time') {
+      return this.results.results.sort((a, b) => {
+        if (a.trackTimeMillis > b.trackTimeMillis) return 1
+        if (a.trackTimeMillis < b.trackTimeMillis) return -1
+        if (a.trackTimeMillis === b.trackTimeMillis) {
+          return a.trackId - b.trackId
+        }
+      })
+    }
+
+    if (term === 'genre') {
+      return this.results.results.sort((a, b) => {
+        const parsedA = a.primaryGenreName.replace(/[^A-Z0-9]/ig, "_");
+        const parsedB = b.primaryGenreName.replace(/[^A-Z0-9]/ig, "_");
+        
+        if(parsedA > parsedB) return 1
+        if(parsedA < parsedB) return -1
+        if(parsedA === parsedB) {
+          return a.trackId - b.trackId
+        }
+      })
+    }
+
+    if (term === 'price') {
+      return this.results.results.sort((a, b) => {
+        if (a.trackPrice > b.trackPrice) return 1
+        if (a.trackPrice < b.trackPrice) return -1
+        if (a.trackPrice === b.trackPrice) {
+          return a.trackId - b.trackId
+        }
+      })
     }
   }
-    }
-}
+
+  getId(id) {
+    this.search.trackId = id;
+  }
 }

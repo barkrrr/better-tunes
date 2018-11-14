@@ -12,6 +12,10 @@
   </div>
 </form>
 
+<div class="no results" *ngIf="!results">
+    <p>Please try again. There were no results</p>
+</div>
+
 <div *ngIf="results">
   <table class="table" ts-wrapper>
     <thead>
@@ -22,9 +26,9 @@
         <th>Album name</th>
         <th>Release date</th>
         <th>Cover</th>
-        <th><a (click)="orderByTime()">Time</a></th>
-        <th><a (click)="orderByGenre()">Genre</a></th>
-        <th><a (click)="orderByPrice()">Price</a></th>
+        <th><a (click)="sortBy('time')">Time</a></th>
+        <th><a (click)="sortBy('genre')">Genre</a></th>
+        <th><a (click)="sortBy('price')">Price</a></th>
       </tr>
     </thead>
     <tbody>
@@ -34,7 +38,7 @@
         <td>{{ result.collectionName }}</td>
         <td>{{ result.releaseDate | date }}</td>
         <td><img src="{{ result.artworkUrl100 }}" alt="Album cover"></td>
-        <td>{{ result.trackTimeMillis | date:'m:ss' }}</td>
+        <td>{{ result.trackTimeMillis | date: 'm:ss' }}</td>
         <td>{{ result.primaryGenreName }}</td>
         <td>{{ result.trackPrice | currency }}</td>
       </tr>

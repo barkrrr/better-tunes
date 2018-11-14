@@ -8,6 +8,8 @@ import { HttpClient } from '@angular/common/http';
 export class SearchService {
   baseUrl = 'https://itunes.apple.com/search?';
   results: any;
+  trackId = null;
+  storedResults = null;
 
   constructor(private http: HttpClient) {}
 
@@ -15,4 +17,7 @@ export class SearchService {
     return this.http.jsonp(`${this.baseUrl}media=music&term=${term}`, 'callback')
       .toPromise();
   }
+
 }
+
+
