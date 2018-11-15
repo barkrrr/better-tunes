@@ -7,6 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class HomepageCardComponent implements OnInit {
   @Input() result: any;
+  
   constructor() { }
 
   ngOnInit() {

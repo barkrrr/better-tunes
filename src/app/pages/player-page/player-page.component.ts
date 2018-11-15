@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SearchService } from 'src/app/services/search.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-player-page',
@@ -7,16 +8,19 @@ import { SearchService } from 'src/app/services/search.service';
   styleUrls: ['./player-page.component.scss']
 })
 export class PlayerPageComponent implements OnInit {
-  results
-  trackId
+  id: string;
+  searchQuery: string;
+  result: any;
+  term: string;
+
   
   constructor(
-    private searchService: SearchService
+    private searchService: SearchService,
+    private route: ActivatedRoute
   ) { }
 
-  ngOnInit() {
-    // this.results = this.searchService.getStoredResult;
-    // this.trackId = this.search.trackId;
+  ngOnInit() {  
+    this.searchService.getStoredResults(this.id);
+    
   }
 }
-

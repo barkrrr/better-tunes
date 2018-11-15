@@ -30,6 +30,7 @@ export class HomePageComponent implements OnInit {
       this.searchService.search(this.searchQuery)
       .then(results => {
         this.results = results
+        this.searchService.getStoredResults = results;
       })
       .catch((err) => {
         console.log(err)
@@ -74,7 +75,7 @@ export class HomePageComponent implements OnInit {
     }
   }
 
-  // getId(id) {
-  //   this.search.trackId = id;
-  // }
+  getId(id) {
+    this.searchService.trackId = id;
+  }
 }

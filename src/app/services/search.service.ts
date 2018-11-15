@@ -9,7 +9,7 @@ export class SearchService {
   baseUrl = 'https://itunes.apple.com/search?';
   results: any;
   trackId = null;
-  storedResults = null;
+  term: string;
 
   constructor(private http: HttpClient) {}
 
@@ -18,6 +18,13 @@ export class SearchService {
       .toPromise();
   }
 
+  getStoredResults(id): Promise<any> {
+    const options = {
+      withCredentials: true
+    };
+    return this.http.jsonp(`${this.baseUrl}media=music&term=${this.term}/player`, 'callback')
+      .toPromise();
+  }
 }
 
 
