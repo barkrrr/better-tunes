@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { PlayerPageComponent } from './pages/player-page/player-page.component';
+import { HomepageCardComponent } from './components/homepage-card/homepage-card.component';
+import { TruncatePipe } from './pipes/truncate.pipe';
 
 const routes: Routes = [
   { path: '',  component: HomePageComponent },
@@ -20,7 +22,9 @@ const routes: Routes = [
     AppComponent,
     NotFoundPageComponent,
     HomePageComponent,
-    PlayerPageComponent
+    PlayerPageComponent,
+    HomepageCardComponent,
+    TruncatePipe
   ],
   imports: [
     BrowserModule,

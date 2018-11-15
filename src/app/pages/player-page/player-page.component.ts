@@ -15,8 +15,8 @@ export class PlayerPageComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.results = this.searchService.getStoredResult;
-    this.trackId = this.search.trackId;
+    // this.results = this.searchService.getStoredResult;
+    // this.trackId = this.search.trackId;
   }
 }
 

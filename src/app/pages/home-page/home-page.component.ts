@@ -74,7 +74,7 @@ export class HomePageComponent implements OnInit {
     }
   }
 
-  getId(id) {
-    this.search.trackId = id;
-  }
+  // getId(id) {
+  //   this.search.trackId = id;
+  // }
 }

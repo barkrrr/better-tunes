@@ -8,42 +8,23 @@
   </div>
 
   <div class="field submit">
-    <button type="submit" [disabled]="processing">Submit</button>
+    <button type="submit" [disabled]="processing">Search</button>
   </div>
 </form>
 
 <div class="no results" *ngIf="!results">
-    <p>Please try again. There were no results</p>
+    <p>Please try again -there were no results.</p>
 </div>
 
 <div *ngIf="results">
-  <table class="table" ts-wrapper>
-    <thead>
-      <tr>
-        <th></th>
-        <th>Song name</th>
-        <th>Artist</th>
-        <th>Album name</th>
-        <th>Release date</th>
-        <th>Cover</th>
-        <th><a (click)="sortBy('time')">Time</a></th>
-        <th><a (click)="sortBy('genre')">Genre</a></th>
-        <th><a (click)="sortBy('price')">Price</a></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let result of results.results">
-        <td><a [routerLink]="['/player']" (click)="getId(i)">{{ result.trackName }}</a></td>
-        <td>{{ result.artistName }}</td>
-        <td>{{ result.collectionName }}</td>
-        <td>{{ result.releaseDate | date }}</td>
-        <td><img src="{{ result.artworkUrl100 }}" alt="Album cover"></td>
-        <td>{{ result.trackTimeMillis | date: 'm:ss' }}</td>
-        <td>{{ result.primaryGenreName }}</td>
-        <td>{{ result.trackPrice | currency }}</td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="nav-sort">
+    <a (click)="sortBy('time')">Time</a>
+    <a (click)="sortBy('price')">Price</a>
+    <a (click)="sortBy('genre')">Genre</a>
+  </div>
+  <div class="card-container" *ngFor="let result of results.results">
+    <app-homepage-card [result]="result"></app-homepage-card>
+  </div>
 </div>
 
 

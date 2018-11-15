@@ -1,0 +1,52 @@
+form {
+  &.container {
+    max-width: 368px;
+    margin: 0 auto;
+
+  }
+  &.is-processing {
+      opacity: 0.5;
+  }
+
+  .field {
+    margin-bottom: 20px;
+    .error-container{
+      height: 22px;
+    }
+  }
+
+  input, select {
+    padding: 5px;
+    font-size: 16px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-style: hidden;
+    border-bottom: 1px solid #bebebe;
+    font-weight: 200;
+    width: 80%;
+    height: 40px;
+
+  }
+  
+  .submit {
+    padding-top: 20px;
+  }
+
+  .submit button {
+    padding: 5px 20px;
+    text-align: center;
+    font-size: 16px;
+    background-color: grey;
+    cursor: pointer;
+    color: white;
+    box-shadow: 0px 1px 11px lightgray;
+  }
+
+  .field.has-error label {
+    color: orange;
+  }
+
+  .field.has-error input {
+    border: 1px solid  orange;
+  }
+} 
