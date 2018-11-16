@@ -18,10 +18,13 @@ export class SearchService {
       .toPromise();
   }
 
-  onClick(row: any){
-    this.searchService.setData(row);
-    this.router.navigate(['/track'])
-  }
+  getStoredResult(id) {
+    if (this.results) {
+      return this.results.results.find(result => {
+        return result.trackId === Number(id)
+      })
+    }
+  }  
 
 }
 

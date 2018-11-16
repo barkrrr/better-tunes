@@ -22,7 +22,17 @@ export class PlayerPageComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    const data = this.searchService.getData();
+    this.activatedRoute.params.subscribe(params => {
+      this.trackId = params.id;
+      if (this.searchService.getStoredResult(this.trackId)) {
+        this.result = this.searchService.getStoredResult(this.trackId)
+      } else {
+         // how to get just the selected track after refresh
+      }
+    
+    });
+
+
   }
 
   // loadSong(id) {
