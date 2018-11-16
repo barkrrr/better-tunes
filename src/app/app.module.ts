@@ -13,7 +13,7 @@ import { TruncatePipe } from './pipes/truncate.pipe';
 
 const routes: Routes = [
   { path: '',  component: HomePageComponent },
-  { path: 'player', component: PlayerPageComponent },
+  { path: 'track/:id', component: PlayerPageComponent },
   { path: '**', component: NotFoundPageComponent}
 ];
 

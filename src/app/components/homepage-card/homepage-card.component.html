@@ -10,5 +10,5 @@
     <p class="length"><strong>Song Length:</strong> {{ result.trackTimeMillis | date: 'm:ss' }}</p>
     <p class="price"><strong>{{ result.trackPrice | currency }}</strong></p>
   </div>
-  <a [routerLink]="['/player']" (click)="getId(id)" class="card-link"></a>
+  <a [routerLink]="['/track', result.trackId]" class="card-link"></a>
 </div>

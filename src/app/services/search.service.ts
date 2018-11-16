@@ -8,8 +8,8 @@ import { HttpClient } from '@angular/common/http';
 export class SearchService {
   baseUrl = 'https://itunes.apple.com/search?';
   results: any;
-  trackId = null;
   term: string;
+  trackId: string;
 
   constructor(private http: HttpClient) {}
 
@@ -18,13 +18,11 @@ export class SearchService {
       .toPromise();
   }
 
-  getStoredResults(id): Promise<any> {
-    const options = {
-      withCredentials: true
-    };
-    return this.http.jsonp(`${this.baseUrl}media=music&term=${this.term}/player`, 'callback')
-      .toPromise();
+  onClick(row: any){
+    this.searchService.setData(row);
+    this.router.navigate(['/track'])
   }
+
 }
 
 
