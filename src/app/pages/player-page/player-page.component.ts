@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { SearchService } from 'src/app/services/search.service';
 import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
+import { SearchService } from 'src/app/services/search.service';
 
 
 @Component({
@@ -18,7 +19,8 @@ export class PlayerPageComponent implements OnInit {
   
   constructor(
     private searchService: SearchService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -26,13 +28,9 @@ export class PlayerPageComponent implements OnInit {
       this.trackId = params.id;
       if (this.searchService.getStoredResult(this.trackId)) {
         this.result = this.searchService.getStoredResult(this.trackId)
-      } else {
-         // how to get just the selected track after refresh
+      } else {this.router.navigate(['/']);  
       }
-    
     });
-
-
   }
 
   // loadSong(id) {
