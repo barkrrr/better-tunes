@@ -32,9 +32,9 @@
       width: 200px;
     }
   }
-  @media (min-width: 1000px) {
+  @media (min-width: 768px) {
     .container {
-      max-width: 960px;
+      max-width: 728px;
       margin: 0 auto;
     }
   .card-body {

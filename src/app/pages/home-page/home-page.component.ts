@@ -14,6 +14,7 @@ export class HomePageComponent implements OnInit {
   searchQuery: string;
   results: any;
   term: string;
+  trackId: any;
 
   constructor(
     private searchService: SearchService
@@ -21,7 +22,7 @@ export class HomePageComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  
   submitForm(form) {
     this.error = '';
     this.feedbackEnabled = true;
@@ -29,8 +30,8 @@ export class HomePageComponent implements OnInit {
       this.processing = true;
       this.searchService.search(this.searchQuery)
       .then(results => {
+        localStorage.setItem('tracks', JSON.stringify(results));
         this.results = results
-        this.searchService.results = results;
       })
       .catch((err) => {
         console.log(err)
