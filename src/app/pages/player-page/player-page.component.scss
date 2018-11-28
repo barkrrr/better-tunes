@@ -1,3 +1,12 @@
+.container {
+ display: grid;
+}
+
+.container-main {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+}
+
 #img-album {
   width: 268px;
   height: 268px;
@@ -7,20 +16,13 @@
   text-align: center;
 }
 
-#player {
+.albumplayer {
   padding-top: 10px;
 }
 
-.product-header {
+.header {
   padding-bottom: 15px;
   display: inline-block;
-}
-
-h4 {
-  font-size: 18px;
-  line-height: 1.2223;
-  font-weight: 400;
-  letter-spacing: .02em;
 }
 
 .table {
@@ -50,8 +52,11 @@ td {
 
 .btn {font-size: 20px;
       width: 3cm;
-      height: 2cm;
-}
+      height: 2cm;  
+} 
+
+
+
 
 #site-footer{
   color: white;

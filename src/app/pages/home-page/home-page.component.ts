@@ -15,6 +15,7 @@ export class HomePageComponent implements OnInit {
   results: any;
   term: string;
   trackId: any;
+  isLoading = true;
 
   constructor(
     private searchService: SearchService
@@ -31,7 +32,12 @@ export class HomePageComponent implements OnInit {
       this.searchService.search(this.searchQuery)
       .then(results => {
         localStorage.setItem('tracks', JSON.stringify(results));
-        this.results = results
+        if (results.resultCount) {
+          this.isLoading = false;
+          this.results = results
+        } else {
+          this.results = null
+        }
       })
       .catch((err) => {
         console.log(err)

@@ -3,7 +3,7 @@
     <img src="{{ result.artworkUrl100 }}" alt="Album cover">
   </div>
   <div class="card-body">
-    <h3 class="album">{{ result.collectionName | truncate:[75, '...']  }}</h3>
+    <h3 class="album">{{ result.collectionName | truncate:[60, '...']  }}</h3>
     <h2 class="artist-track">{{ result.artistName | truncate:[30, '...'] }} - {{ result.trackName | truncate:[30, '...'] }}</h2>
     <h5 class="genre">{{ result.primaryGenreName }}</h5>
     <p class="release"><strong>Release date:</strong> {{ result.releaseDate | date }}</p>

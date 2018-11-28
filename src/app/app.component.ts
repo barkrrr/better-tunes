@@ -15,16 +15,5 @@ export class AppComponent {
     public itunes: SearchService,
     private route: ActivatedRoute,
     private router: Router) {
-      this.route.params.subscribe(params => {
-        if (params['term']) {
-          this.onSearch(params['term'])
-      }
-    });
-  }
-
-  onSearch(term: string) {
-    this.loading = true;
-    this.itunes.search(term).then(_ => this.loading = false);
-    this.router.navigate(['search', {term: term}]);
-  }
-}
+    }
+    }
