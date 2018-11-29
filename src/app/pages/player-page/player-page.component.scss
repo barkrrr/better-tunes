@@ -3,13 +3,13 @@
 }
 
 .container-main {
-  display: grid;
-  grid-template-columns: 1fr 3fr 1fr;
+  display: flex;
+  justify-content: center;
 }
 
-#img-album {
-  width: 268px;
-  height: 268px;
+img.album-cover {
+  width: 150px;
+  height: 150px;
   border-radius: 6px;
   border: .5px solid rgba(0,0,0,.1);
   z-index: 1;
@@ -20,19 +20,6 @@
   padding-top: 10px;
 }
 
-.header {
-  padding-bottom: 15px;
-  display: inline-block;
-}
-
-.table {
-  border-collapse: collapse;
-}
-
-.table-head {
-  border-bottom: 1px solid #e5e5e5;
-}
-
 #playlist td:first-child {
   padding-right: 15px;
 }
@@ -40,10 +27,12 @@
 td {
   height: 50px;
   vertical-align: middle;
+  padding-left: 20px;
 }
 
 .duration {
-  padding-left: 22px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 #buttons-player {
@@ -56,7 +45,14 @@ td {
 } 
 
 
-
+.list-search {
+  cursor: pointer;
+  transition: 0.3s ease all;
+  &:hover {
+    background: lightgray;
+    transition: 0.3s ease all;
+  }
+}
 
 #site-footer{
   color: white;

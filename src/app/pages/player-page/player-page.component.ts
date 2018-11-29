@@ -9,12 +9,14 @@ import { SearchService } from 'src/app/services/search.service';
   templateUrl: './player-page.component.html',
   styleUrls: ['./player-page.component.scss']
 })
+
 export class PlayerPageComponent implements OnInit {
   public id: string;
   results: any;
   trackId: any;
   search: string;
   nextAudio = new Audio();
+  albumImage: string;
 
   
   constructor(
@@ -30,6 +32,8 @@ export class PlayerPageComponent implements OnInit {
     this.results = JSON.parse(localStorage.getItem('tracks'));
   }
   loadSong(id) {
+    this.albumImage = this.results.results[id].artworkUrl100
+
     let trackName = this.results.results[id].trackName;
     (document.getElementById('trackName') as HTMLTitleElement).textContent = trackName;
 
@@ -45,7 +49,7 @@ export class PlayerPageComponent implements OnInit {
     (document.getElementById('relaseDate') as HTMLTitleElement).textContent = ' - '+fullYear;
 
     let img = this.results.results[id].artworkUrl100;
-    (document.getElementById('img-album') as HTMLImageElement).src = img;
+    (document.querySelector('.album-cover') as HTMLImageElement).src = img;
 
     let song = this.results.results[id].previewUrl;
   

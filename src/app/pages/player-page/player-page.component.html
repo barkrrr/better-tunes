@@ -1,7 +1,9 @@
+<div class="img-album">
+  <img class="album-cover" *ngIf="!albumImage" src="https://greeneyedmedia.com/wp-content/plugins/woocommerce/assets/images/placeholder.png" alt="">
+  <img class="album-cover" *ngIf="albumImage" [src]="albumImage">
+</div>
+
   <div class="container">
-    <div class="cover">
-      <img id="img-album" src="" alt="">
-    </div>   
     
     <div class="header">      
         <h2>Play your tune here:</h2>
@@ -25,7 +27,7 @@
     </div>
   </div>
 
-  <div class="container-main">
+  <div class="container-main container">
     <div class="table">
         <table class="table">
           <thead class="table-head">
